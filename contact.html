@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Helionics – Home</title>
+  <title>Contact – Helionics</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet" />
 </head>
 <body>
   <header>
@@ -13,19 +14,43 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
+        <li><a href="services.html">Programs</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <h2>Welcome to Helionics</h2>
-    <p>This is the future home of advanced scientific and corporate innovation.</p>
-  </main>
+  <section class="fade-in">
+    <h2>Get in Touch</h2>
+    <p>We welcome inquiries, collaboration proposals, and feedback on our research initiatives.</p>
+
+    <ul>
+      <li>
+        Email:
+        <a href="mailto:&#106;&#097;&#115;&#111;&#110;&#115;&#116;&#101;&#101;&#108;&#101;&#064;&#104;&#101;&#108;&#105;&#111;&#110;&#105;&#099;&#115;&#046;&#099;&#097;">
+          &#106;&#097;&#115;&#111;&#110;&#115;&#116;&#101;&#101;&#108;&#101;&#064;&#104;&#101;&#108;&#105;&#111;&#110;&#105;&#099;&#115;&#046;&#099;&#097;
+        </a>
+      </li>
+      <li>Location: New Brunswick, Canada</li>
+    </ul>
+
+    <h3>Send a Message</h3>
+    <form action="#" method="post">
+      <label for="name">Name:</label><br />
+      <input type="text" id="name" name="name" required /><br /><br />
+
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" required /><br /><br />
+
+      <label for="message">Message:</label><br />
+      <textarea id="message" name="message" rows="5" required></textarea><br /><br />
+
+      <button type="submit" class="button">Send Message</button>
+    </form>
+  </section>
 
   <footer>
-    &copy; 2025 Helionics Inc. All rights reserved.
+    <p>&copy; 2025 Helionics. All rights reserved.</p>
   </footer>
 </body>
 </html>
