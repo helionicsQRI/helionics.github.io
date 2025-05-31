@@ -1,11 +1,11 @@
 /* ======================================
-   Helionics Scientific Theme - With Motif
+   Helionics – Scientific Theme Stylesheet
    ====================================== */
 
-/* Google Font: Inter */
+/* Font Import: Inter */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
 
-/* Root Color Scheme */
+/* Root Variables */
 :root {
   --color-navy: #002147;
   --color-orange: #f47c26;
@@ -16,7 +16,7 @@
   --color-alert: #d9472d;
 }
 
-/* Reset */
+/* Reset & Base */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -30,7 +30,7 @@ body {
   line-height: 1.6;
 }
 
-/* Header */
+/* Header & Nav */
 header {
   background-color: var(--color-navy);
   color: white;
@@ -62,25 +62,47 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Hero with Gradient + Hex Lattice */
+/* Hero Section */
 .hero {
+  position: relative;
   background: linear-gradient(135deg, #002147 0%, #003b6f 100%);
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='104' viewBox='0 0 120 104' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 17.32v34.64L30 69.28 0 51.96V17.32L30 0zm60 0l30 17.32v34.64l-30 17.32-30-17.32V17.32L90 0zM0 69.28l30 17.32v34.64L0 138.56l-30-17.32V86.6L0 69.28z' fill='%2300346b' fill-opacity='0.05'/%3E%3C/svg%3E");
+  background-size: 250px;
   color: white;
   text-align: center;
   padding: 4rem 2rem;
-  background-image: url("data:image/svg+xml,%3Csvg width='120' height='104' viewBox='0 0 120 104' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 17.32v34.64L30 69.28 0 51.96V17.32L30 0zm60 0l30 17.32v34.64l-30 17.32-30-17.32V17.32L90 0zM0 69.28l30 17.32v34.64L0 138.56l-30-17.32V86.6L0 69.28z' fill='%2300346b' fill-opacity='0.05'/%3E%3C/svg%3E");
-  background-size: 250px;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 33, 71, 0.75);
+  z-index: 1;
+}
+
+.hero h1,
+.hero p,
+.hero a {
+  position: relative;
+  z-index: 2;
 }
 
 .hero h1 {
   font-size: 2.7rem;
   margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
 }
 
 .hero p {
   font-size: 1.2rem;
   color: #e3e3e3;
   margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 .button {
@@ -93,7 +115,7 @@ nav a:hover {
   font-weight: bold;
   display: inline-block;
   margin-top: 1rem;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .button:hover {
@@ -137,16 +159,17 @@ li {
   margin-bottom: 0.5rem;
 }
 
-/* Callout Box */
+/* Callout */
 .callout {
   background-color: var(--color-lightblue);
   border-left: 6px solid var(--color-orange);
   padding: 1.5rem;
   margin: 2rem 0;
   font-style: italic;
+  font-size: 1.1rem;
 }
 
-/* Highlight */
+/* Highlighted Text */
 .highlight {
   color: var(--color-orange);
   font-weight: bold;
@@ -177,7 +200,7 @@ footer {
   }
 }
 
-/* Mobile */
+/* Responsive Design */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
