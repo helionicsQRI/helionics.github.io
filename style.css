@@ -1,5 +1,5 @@
 /* ======================================
-   Helionics – Scientific Theme Stylesheet
+   Helionics – Scientific Theme Stylesheet (with Dark Mode and Hex Lattice)
    ====================================== */
 
 /* Font Import: Inter */
@@ -15,22 +15,25 @@
   --color-bg-light: #f9f9f9;
   --color-alert: #d9472d;
 
-  /* Unified theme variables (default to light) */
+  /* Theme Variables (light default) */
   --color-bg: var(--color-bg-light);
   --color-text: var(--color-text-dark);
   --color-muted: var(--color-text-muted);
   --color-accent-bg: var(--color-lightblue);
-  --color-link: var(--color-navy);
+  --color-link: #002147;
 }
 
-/* Dark Theme Support */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #0f1117;
-    --color-text: #dddddd;
-    --color-muted: #999999;
-    --color-accent-bg: #1e1f26;
-    --color-link: #f47c26;
+    --color-bg: #121416;
+    --color-text: #e6e6e6;
+    --color-muted: #aaa;
+    --color-accent-bg: #1c1f22;
+    --color-link: #91cfff;
+  }
+
+  h2, h3 {
+    color: #ffffff;
   }
 }
 
@@ -48,7 +51,15 @@ body {
   line-height: 1.6;
 }
 
-/* Header & Nav */
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 header {
   background-color: var(--color-navy);
   color: white;
@@ -80,12 +91,12 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Hero Section */
+/* Hero Section with 3D Hex Pattern */
 .hero {
   position: relative;
   background: linear-gradient(135deg, #002147 0%, #003b6f 100%);
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='86' viewBox='0 0 100 86' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%2300346b' stroke-opacity='0.15'%3E%3Cpath d='M50 0l50 29v28l-50 29-50-29V29z'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: 200px;
+  background-image: url("data:image/svg+xml,%3Csvg width='160' height='140' viewBox='0 0 160 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%2300346b' stroke-width='1.5'%3E%3Cpath d='M80 0l80 46v48l-80 46-80-46V46z'/%3E%3Cpath d='M0 46l80 46 80-46' stroke-opacity='0.2'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 220px;
   background-repeat: repeat;
   background-position: center;
   color: white;
@@ -101,7 +112,7 @@ nav a:hover {
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 33, 71, 0.8);
+  background-color: rgba(0, 33, 71, 0.85);
   z-index: 1;
 }
 
@@ -115,116 +126,4 @@ nav a:hover {
 .hero h1 {
   font-size: 2.7rem;
   margin-bottom: 0.5rem;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-}
-
-.hero p {
-  font-size: 1.2rem;
-  color: #e3e3e3;
-  margin-bottom: 1.5rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-/* Sections */
-section {
-  padding: 2rem 1rem;
-  max-width: 960px;
-  margin: auto;
-}
-
-.section-soft {
-  background-color: var(--color-accent-bg);
-}
-
-h2 {
-  color: var(--color-navy);
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-h3 {
-  color: var(--color-navy);
-  margin-top: 2rem;
-  margin-bottom: 0.8rem;
-}
-
-p {
-  margin-bottom: 1rem;
-}
-
-ul {
-  padding-left: 1.2rem;
-  margin-bottom: 1.5rem;
-}
-
-li {
-  margin-bottom: 0.5rem;
-}
-
-/* Callout */
-.callout {
-  background-color: var(--color-accent-bg);
-  border-left: 6px solid var(--color-orange);
-  padding: 1.5rem;
-  margin: 2rem 0;
-  font-style: italic;
-  font-size: 1.1rem;
-}
-
-/* Highlighted Text */
-.highlight {
-  color: var(--color-orange);
-  font-weight: bold;
-}
-
-/* Footer */
-footer {
-  background-color: var(--color-navy);
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 3rem;
-}
-
-/* Animations */
-.fade-in {
-  animation: fadeIn 1s ease-in-out both;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 1rem;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .button {
-    font-size: 0.95rem;
-    padding: 0.75rem 1.4rem;
-  }
-   }
+  text
