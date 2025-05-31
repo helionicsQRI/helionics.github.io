@@ -1,37 +1,78 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+}
+
+header {
+  background-color: #002147;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
 .hero {
   background-color: #002147;
   color: white;
-  padding: 4rem 2rem;
   text-align: center;
+  padding: 3rem 2rem;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-}
-
-.hero h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #e3e3e3;
+  font-size: 2.5rem;
 }
 
 .hero p {
-  font-size: 1.1rem;
-  color: #ccc;
-  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  color: #e3e3e3;
 }
 
 .button {
   background-color: #f47c26;
   color: white;
   padding: 0.75rem 1.5rem;
+  border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
-  border-radius: 5px;
-  display: inline-block;
 }
 
 .button:hover {
   background-color: #e66900;
+}
+
+section {
+  padding: 2rem;
+  max-width: 960px;
+  margin: auto;
+}
+
+h2 {
+  color: #002147;
+}
+
+.highlight {
+  color: #f47c26;
+  font-weight: bold;
 }
