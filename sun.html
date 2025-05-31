@@ -6,6 +6,21 @@
   <title>Solar Surface Modeling – Helionics</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@panzoom/panzoom@9.4.0/dist/panzoom.min.js"></script>
+  <style>
+    .zoom-container {
+      overflow: hidden;
+      max-width: 800px;
+      margin: 2rem auto;
+      border: 1px solid #ccc;
+    }
+    .zoomable {
+      width: 100%;
+      height: auto;
+      touch-action: none;
+      cursor: grab;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -25,33 +40,52 @@
   <section class="fade-in">
     <h2>Solar Surface Modeling</h2>
     <p>
-      These experimental renderings are part of Helionics' early research into solar topography visualization using terrain modeling techniques applied to observational astrophysical data.
+      These renderings are part of Helionics' early-stage research into solar surface topography using terrain modeling techniques applied to high-resolution sunspot imagery.
     </p>
 
     <div class="callout">
-      Derived from DKIST's first released sunspot image, this series translates solar optical intensity into a 3D terrain model, visualized using GIS elevation workflows.
+      These visualizations were created by converting optical intensity data from DKIST's first sunspot release into digital elevation models, then re-texturing them for 3D presentation.
     </div>
 
     <h3>Original DKIST Sunspot Image</h3>
     <img src="reconstruction3_lin-CC12.jpg" alt="DKIST Sunspot Image" style="width:100%; max-width:800px; border:1px solid #ccc; margin-bottom:2rem;" />
 
-    <h3>3D Terrain Model Renders</h3>
+    <h3>3D Terrain Visualizations</h3>
 
-    <img src="sunspot-Crop-Image-full-3d.png" alt="Sunspot Render 1" style="width:100%; max-width:800px; margin-bottom:2rem;" />
-    <img src="DKIST-First-Sunspot-4.png" alt="Sunspot Render 2" style="width:100%; max-width:800px; margin-bottom:2rem;" />
-    <img src="DKIST-First-Sunspot-2.png" alt="Sunspot Render 3" style="width:100%; max-width:800px;" />
+    <div class="zoom-container">
+      <img src="DKIST-First-Sunspot-4.png" alt="3D Sunspot Render 1" class="zoomable" />
+    </div>
+
+    <div class="zoom-container">
+      <img src="DKIST-First-Sunspot-2.png" alt="3D Sunspot Render 2" class="zoomable" />
+    </div>
+
+    <div class="zoom-container">
+      <img src="sunspot-Crop-Image-full-3d.png" alt="3D Sunspot Render 3" class="zoomable" />
+    </div>
 
     <p>
-      This technique is part of Helionics' larger goal: to develop simulation methods that incorporate empirical solar and radiative data into climate, materials, and energy models. These terrain-style renderings provide a novel way to conceptualize and potentially quantify active solar regions.
+      This approach demonstrates a potential path toward combining empirical astrophysics with GIS-based modeling techniques. It is part of Helionics’ broader goal to integrate solar physics into energy modeling and emission forecasting tools.
     </p>
 
     <p style="font-size: 0.9rem; color: var(--color-text-muted);">
-      Image credit: National Solar Observatory (NSO), NSF, AURA, DKIST. Visualization by Jason Steele.
-    </p>
+  Image credit: <a href="https://nso.edu/press-release/inouye-solar-telescope-releases-first-image-of-a-sunspot/" target="_blank" style="color: inherit; text-decoration: underline;">National Solar Observatory (NSO), NSF, AURA, DKIST</a>. Visualization and terrain model processing by Jason Steele.
+</p>
+
   </section>
 
   <footer>
     <p>&copy; 2025 Helionics. All rights reserved.</p>
   </footer>
+
+  <script>
+    document.querySelectorAll('.zoomable').forEach(img => {
+      Panzoom(img, {
+        maxScale: 5,
+        contain: 'outside',
+        cursor: 'move'
+      });
+    });
+  </script>
 </body>
 </html>
