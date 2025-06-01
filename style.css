@@ -1,21 +1,18 @@
 /* ======================================
-   Helionics – Scientific Theme Stylesheet (Updated)
+   Helionics – Scientific Theme Stylesheet (Contrast Enhanced)
    ====================================== */
 
-/* Font Import: Inter */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
 
-/* Root Variables */
 :root {
-  --color-navy: #002147;
-  --color-orange: #f47c26;
-  --color-lightblue: #eaf2f8;
-  --color-text-dark: #2e2e2e;
-  --color-text-muted: #555;
-  --color-bg-light: #f9f9f9;
-  --color-alert: #d9472d;
+  --color-navy: #001530;
+  --color-orange: #ea5c1d;
+  --color-lightblue: #d9e6f2;
+  --color-text-dark: #1a1a1a;
+  --color-text-muted: #444;
+  --color-bg-light: #ffffff;
+  --color-alert: #c0392b;
 
-  /* Unified theme variables (default to light) */
   --color-bg: var(--color-bg-light);
   --color-text: var(--color-text-dark);
   --color-muted: var(--color-text-muted);
@@ -23,14 +20,13 @@
   --color-link: var(--color-navy);
 }
 
-/* Dark Theme Support */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #0f1117;
-    --color-text: #dddddd;
-    --color-muted: #999999;
-    --color-accent-bg: #1e1f26;
-    --color-link: #91cfff;
+    --color-bg: #0d0f14;
+    --color-text: #e0e0e0;
+    --color-muted: #bbbbbb;
+    --color-accent-bg: #222631;
+    --color-link: #66b2ff;
   }
 
   h2, h3 {
@@ -38,7 +34,6 @@
   }
 }
 
-/* Reset & Base */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -52,10 +47,9 @@ body {
   line-height: 1.6;
 }
 
-/* Header & Nav */
 header {
   background-color: var(--color-navy);
-  color: white;
+  color: #ffffff;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -75,24 +69,23 @@ nav ul {
 }
 
 nav a {
-  color: white;
+  color: #ffffff;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 nav a:hover {
   text-decoration: underline;
 }
 
-/* Hero Section */
 .hero {
   position: relative;
-  background: linear-gradient(135deg, #002147 0%, #003b6f 100%);
+  background: linear-gradient(135deg, #001530 0%, #003b6f 100%);
   background-image: url("data:image/svg+xml,%3Csvg width='160' height='140' viewBox='0 0 160 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%2300346b' stroke-width='1.5'%3E%3Cpath d='M80 0l80 46v48l-80 46-80-46V46z'/%3E%3Cpath d='M0 46l80 46 80-46' stroke-opacity='0.2'/%3E%3C/g%3E%3C/svg%3E");
   background-size: 220px;
   background-repeat: repeat;
   background-position: center;
-  color: white;
+  color: #ffffff;
   text-align: center;
   padding: 4rem 2rem;
   z-index: 0;
@@ -105,7 +98,7 @@ nav a:hover {
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 33, 71, 0.85);
+  background-color: rgba(0, 21, 48, 0.85);
   z-index: 1;
 }
 
@@ -119,17 +112,16 @@ nav a:hover {
 .hero h1 {
   font-size: 2.7rem;
   margin-bottom: 0.5rem;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
 
 .hero p {
   font-size: 1.2rem;
-  color: #e3e3e3;
+  color: #f2f2f2;
   margin-bottom: 1.5rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* Sections */
 section {
   padding: 2rem 1rem;
   max-width: 960px;
@@ -165,7 +157,6 @@ li {
   margin-bottom: 0.5rem;
 }
 
-/* Callout */
 .callout {
   background-color: var(--color-accent-bg);
   border-left: 6px solid var(--color-orange);
@@ -175,22 +166,19 @@ li {
   font-size: 1.1rem;
 }
 
-/* Highlighted Text */
 .highlight {
   color: var(--color-orange);
   font-weight: bold;
 }
 
-/* Footer */
 footer {
   background-color: var(--color-navy);
-  color: white;
+  color: #ffffff;
   text-align: center;
   padding: 1rem;
   margin-top: 3rem;
 }
 
-/* Animations */
 .fade-in {
   animation: fadeIn 1s ease-in-out both;
 }
@@ -206,7 +194,6 @@ footer {
   }
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -225,10 +212,5 @@ footer {
 
   .hero p {
     font-size: 1rem;
-  }
-
-  .button {
-    font-size: 0.95rem;
-    padding: 0.75rem 1.4rem;
   }
 }
