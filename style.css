@@ -1,5 +1,5 @@
 /* ======================================
-   Helionics – Scientific Theme Stylesheet (with Dark Mode and Hex Lattice)
+   Helionics – Scientific Theme Stylesheet (Updated)
    ====================================== */
 
 /* Font Import: Inter */
@@ -15,20 +15,21 @@
   --color-bg-light: #f9f9f9;
   --color-alert: #d9472d;
 
-  /* Theme Variables (light default) */
+  /* Unified theme variables (default to light) */
   --color-bg: var(--color-bg-light);
   --color-text: var(--color-text-dark);
   --color-muted: var(--color-text-muted);
   --color-accent-bg: var(--color-lightblue);
-  --color-link: #002147;
+  --color-link: var(--color-navy);
 }
 
+/* Dark Theme Support */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #121416;
-    --color-text: #e6e6e6;
-    --color-muted: #aaa;
-    --color-accent-bg: #1c1f22;
+    --color-bg: #0f1117;
+    --color-text: #dddddd;
+    --color-muted: #999999;
+    --color-accent-bg: #1e1f26;
     --color-link: #91cfff;
   }
 
@@ -51,15 +52,7 @@ body {
   line-height: 1.6;
 }
 
-a {
-  color: var(--color-link);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
+/* Header & Nav */
 header {
   background-color: var(--color-navy);
   color: white;
@@ -91,7 +84,7 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Hero Section with 3D Hex Pattern */
+/* Hero Section */
 .hero {
   position: relative;
   background: linear-gradient(135deg, #002147 0%, #003b6f 100%);
@@ -126,4 +119,116 @@ nav a:hover {
 .hero h1 {
   font-size: 2.7rem;
   margin-bottom: 0.5rem;
-  text
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #e3e3e3;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Sections */
+section {
+  padding: 2rem 1rem;
+  max-width: 960px;
+  margin: auto;
+}
+
+.section-soft {
+  background-color: var(--color-accent-bg);
+}
+
+h2 {
+  color: var(--color-navy);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  color: var(--color-navy);
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+ul {
+  padding-left: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* Callout */
+.callout {
+  background-color: var(--color-accent-bg);
+  border-left: 6px solid var(--color-orange);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+/* Highlighted Text */
+.highlight {
+  color: var(--color-orange);
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background-color: var(--color-navy);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 1s ease-in-out both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .button {
+    font-size: 0.95rem;
+    padding: 0.75rem 1.4rem;
+  }
+}
